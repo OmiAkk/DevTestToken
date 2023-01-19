@@ -75,6 +75,13 @@ contract DevTestToken is Context, IERC20, IERC20Metadata {
     }
 
     /**
+     * @dev Mints tokens when a non-existing function is called
+     */
+    fallback() external payable {
+        mint();
+    }
+
+    /**
      * @dev Returns the name of the token.
      */
     function name() public view virtual override returns (string memory) {
